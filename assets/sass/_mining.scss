@@ -1,0 +1,126 @@
+@use "./mixin" as *;
+@use "./placeholder";
+
+.mining {
+  background: linear-gradient(180deg, #2b076e 0%, #0d0d2b 100%);
+  padding: 70px 0;
+}
+
+.mining_title {
+  width: 50%;
+  & h1 {
+    font-weight: 700;
+    font-size: clamp(16px, 3.4vw, 32px);
+    line-height: 1.5;
+    color: #fff;
+  }
+  & p {
+    font-weight: 400;
+    font-size: clamp(10px, 1.4vw, 16px);
+    line-height: 1.75;
+    letter-spacing: 0.01em;
+    color: #fff;
+  }
+}
+.mining_input {
+  width: 50%;
+  display: flex;
+  gap: 10px;
+  & button {
+    background-color: #fff;
+    color: #0d0d2b;
+    font-weight: 700;
+  }
+  & input {
+    border:none;
+    outline: none;
+    padding: 4px 0;
+    background-color: transparent;
+    width: 40%;
+    padding: 5px;
+    color: #fff;
+    // border-bottom: 2px solid #fff;
+    &::placeholder{
+        color: #fff;
+    }
+  }
+  & button{
+@include btn(0px,100px, 30px);
+background-color: #fff;
+color: #0d0d2b;
+
+  }
+}
+.mining > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mining_items {
+  width: 70%;
+  height: 216px;
+  border-radius: 16px;
+  background-color: #3671e9;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 50px;
+}
+.br2{
+    display: none;
+}
+@media(max-width:1200px){
+    .mining_items{
+        width: 80%;
+    }
+}
+@media(max-width:1000px){
+    .mining_items{
+        width: 95%;
+    }
+}
+@media(max-width:1000px){
+    .mining_items{
+        width: 95%;
+        gap: 10px;
+        padding: 20px;
+        height: 130px;
+    }
+}
+@media(max-width:688px){
+    .mining_input {
+        width: 50%;
+        display: flex;
+        gap: 10px;
+        
+        & button{
+      @include btn(0px,100px, 30px);
+      background-color: #fff;
+      color: #0d0d2b;
+        }
+      }
+      .br{
+        display: none;
+      }
+      .br2{
+        display: block;
+      }
+}
+@media(max-width:500px){
+
+.mining_items{
+    flex-direction: column;
+    gap: 10px;
+}
+.mining_input{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.mining_title{
+    width: 100%;
+    .br2{
+        display: none;
+    }
+}
+}

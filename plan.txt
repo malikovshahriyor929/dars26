@@ -1,0 +1,3 @@
+placeholder
+% foiz da style beriladi 
+@extend bilan beriladi

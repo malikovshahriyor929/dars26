@@ -1,0 +1,27 @@
+@use "./mixin" as *;
+@use "./placeholder";
+.chart {
+  background: #2b076e;
+  margin-top: 50px;
+}
+.chart_title {
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+  & h1 {
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: center;
+    width: 70%;
+   
+    color: #fff;
+    // width: 70%;
+    font-size: clamp(16px, 3.4vw, 40px);
+  }
+}
+.charts{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}

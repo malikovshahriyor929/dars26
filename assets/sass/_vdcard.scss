@@ -1,0 +1,97 @@
+@use "./mixin" as *;
+@use "./placeholder";
+
+.vdcard{
+  display: flex;
+  align-items: center;
+  position: relative;
+  // overflow: hidden;
+}
+.vdcard-txt {
+  & h1 {
+    font-size: 50px;
+  }
+  & p {
+    width: 20%;
+  }
+}
+.vdcard_txt {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+@media (max-width: 1104px) {
+  .vdcard1 {
+    // height: 100%;
+    width: 50vw;
+  }
+  .vdcard_txt {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+@media (max-width: 700px) {
+  .vdcard1 {
+    height: 100%;
+    width: 50vw;
+  }
+  .vdcard_txt {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    & button {
+      height: 20px;
+      width: 70px;
+      font-size: 10px;
+    }
+  }
+}
+@media (max-width: 380px) {
+  .vdcard1 {
+    height: 100%;
+    width: 50vw;
+  }
+}
+
+@media (max-width: 322px) {
+  .vdcard1 {
+    height: 100%;
+    width: 50vw;
+  }
+  .vdcard-txt {
+    & h1 {
+      font-size: 18px;
+    }
+  }
+}
+.minerpositionD {
+  position: absolute;
+  top: -40px;
+  right: 0;
+}
+.minerpositionu2 {
+  position: absolute;
+  right: 0;
+  bottom: -39px;
+}
+
+@media (max-width: 988px) {
+  .minerpositionD {
+    // right: -150px;
+    transform: rotate(220deg);
+  }
+  .minerpositionu2 {
+    transform: rotate(180deg);
+    transform: rotateY(180deg);
+    bottom: 0;
+  }
+}
+@media (max-width: 662px) {
+  .minerpositionD {
+    display: none;
+  }
+  .minerpositionu2 {
+    display: none;
+  }
+}

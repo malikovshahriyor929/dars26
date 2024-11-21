@@ -1,0 +1,182 @@
+@use "./mixin" as *;
+@use "./placeholder";
+.test{
+    background: linear-gradient(180deg, #f8f9fb 0%, #fafbff 100%);
+}
+.test1 >  div,
+.test > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.colculate {
+  width: 70%;
+  background-color: #fff;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  border-radius: 10px 10px 0 0;
+  border: none;
+ 
+
+  & button {
+    height: 30px;
+    width: 100px;
+    box-sizing: content-box;
+    padding: 10px 15px;
+    @include btn(10px 15px, 100px, 30px);
+  }
+  & input {
+    border: none;
+    outline: none;
+    padding: 5px 0;
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  }
+}
+.input1 {
+  width: 40%;
+}
+.input2 {
+  width: 10%;
+}
+.result {
+  width: 70%;
+  border: none;
+  background-color: #fff;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  flex-direction: column;
+  border-radius: 0 0 10px 10px;
+  padding: 2rem 0 2rem 3rem;
+  margin-bottom: 50px;
+  box-shadow: 0 50px 40px #3917770c;
+  & h4 {
+    font-weight: 600;
+    font-size: clamp(10px, 1.4vw, 16px);
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #3671e9;
+  }
+  & h1 {
+    font-weight: 700;
+    font-size: clamp(16px, 2.4vw, 32px);
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    color: #0d0d2b;
+    & span {
+      color: #3671e9;
+    }
+  }
+  & p {
+    font-weight: 400;
+    font-size: clamp(10px, 1.4vw, 16px);
+    line-height: 1.75;
+    letter-spacing: 0.01em;
+    color: #828282;
+  }
+}
+@media (max-width: 890px) {
+  .result {
+    width: 70%;
+    border: none;
+    background-color: #fff;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    flex-direction: column;
+    border-radius: 0 0 10px 10px;
+    padding: 1rem 0 1rem 2rem;
+  }
+}
+@media (max-width: 890px) {
+  .result {
+    width: 70%;
+    border: none;
+    background-color: #fff;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    flex-direction: column;
+    border-radius: 0 0 10px 10px;
+    padding: 0.5rem 0 0.5rem 1rem;
+  }
+}
+@media (max-width: 890px) {
+  .result {
+    width: 80%;
+    border: none;
+    background-color: #fff;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    flex-direction: column;
+    border-radius: 0 0 10px 10px;
+    padding: 0.5rem 0 0.5rem 1rem;
+  }
+  .colculate {
+    width: 80%;
+    & button {
+      box-sizing: content-box;
+      font-size: 13px;
+      @include btn(8px 10px, 70px, 20px);
+    }
+  }
+}
+@media (max-width: 490px) {
+  .result {
+    width: 90%;
+    border: none;
+    background-color: #fff;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    flex-direction: column;
+    border-radius: 0 0 10px 10px;
+    padding: 0.5rem 0 0.5rem 1rem;
+  }
+  .colculate {
+    width: 90%;
+    & button {
+      box-sizing: content-box;
+      font-size: 13px;
+      @include btn(8px 10px, 70px, 20px);
+    }
+  }
+}
+@media (max-width: 410px) {
+  .result {
+    width: 90%;
+
+    padding: 0.5rem 0.2rem 0.5rem 1rem;
+  }
+  .colculate {
+    width: 90%;
+    gap: 10px;
+    & button {
+      box-sizing: content-box;
+      font-size: 13px;
+      @include btn(0, 70px, 25px);
+      font-size: 10px;
+    }
+    & input {
+      border: none;
+      outline: none;
+      padding: 0;
+
+      border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+      &::placeholder {
+        font-size: 10px;
+      }
+    }
+  }
+}

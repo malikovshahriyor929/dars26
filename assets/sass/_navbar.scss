@@ -1,0 +1,104 @@
+@use "./mixin" as *;
+@use "./placeholder";
+
+.navbar {
+  padding: 50px 0;
+  @include flexbox(center, space-between, 0);
+}
+.navbar_rigth {
+  @include flexbox(center, flex-start, 56px);
+}
+.links {
+  @include flexbox(center, flex-start, 32px);
+  & li a {
+    @extend %links-style;
+  }
+}
+.nav_btns {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  & button:last-child {
+    @include btn(14px 32px, 130px, 52px);
+  }
+}
+.btn2 {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  color: #fff;
+}
+.phone {
+  @include flexbox(center, flex-start, 30px);
+}
+.bar,
+.close {
+  display: none;
+  color: #fff;
+}
+.close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+#check {
+  display: none;
+}
+@media (max-width: 800px) {
+  .bar {
+    display: block;
+  }
+  .close {
+    display: block;
+  }
+  .links {
+    position: fixed;
+    left: -100%;
+    top: 0;
+    width: 100vw;
+    height: 100%;
+    transition: 0.9s;
+    @include flexbox(center, center, 30px);
+    flex-direction: column;
+    background-color: #0d0d2b;
+    z-index: 999;
+    overflow-y: hidden;
+  }
+  #check:checked ~ .close {
+    display: block;
+  }
+  #check:checked ~ .bar {
+    display: none;
+  }
+  #check:checked ~ .links {
+    left: 0;
+  }
+}
+@media (max-width: 500px) {
+  .nav_btns {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    & button:last-child {
+      @include btn(0, 60px, 25px);
+      font-size: 12px;
+    }
+  }
+  .btn2 {
+    font-size: 12px;
+  }
+}
+@media (max-width: 400px) {
+  .phone {
+    @include flexbox(center, flex-start, 20px);
+  }
+}
+@media (max-width: 334px) {
+  .nav_btns{
+    display: none;
+  }
+}
